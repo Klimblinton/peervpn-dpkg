@@ -11,4 +11,4 @@
   git:
     repo: "{{ peervpn.git.repo_path }}"
     dest: peervpn.build_path
-    version: main
+ 
