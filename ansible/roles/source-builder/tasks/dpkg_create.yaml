@@ -6,7 +6,7 @@
     recursive: yes
 
 - name: Template a deb package control file
-  ansible.builtin.template:
+  template:
     src: peervpn_dpkg_control.j2
     dest: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/DEBIAN/control"
     owner: root
