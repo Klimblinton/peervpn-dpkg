@@ -10,5 +10,5 @@
 - name: Clone peervpn source code
   git:
     repo: "{{ peervpn.git.repo_path }}"
-    dest: "{{ peervpn.build_path }}"/peervpn
+    dest: "{{ peervpn.build_path }}/peervpn"
  
