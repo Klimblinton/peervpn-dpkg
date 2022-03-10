@@ -15,3 +15,6 @@
 - name: Make binary
   import_tasks: make.yaml
 
+- name: Create debian package
+  import_tasks: dpkg_create.yaml
+
