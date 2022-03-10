@@ -1,0 +1,27 @@
+- name: Create dpkg directory
+  file:
+    path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/DEBIAN"
+    state: directory
+    mode: '0755'
+    recursive: yes
+
+- name: Template a deb package control file
+  ansible.builtin.template:
+    src: peervpn_dpkg_control.j2
+    dest: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/DEBIAN/control"
+    owner: root
+    mode: '0644'
+
+- name: Create dpkg binary directory
+  file:
+    path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/usr/local/bin"
+    state: directory
+    mode: '0755'
+    recursive: yes
+
+- name: Copy peervpn binary to package folder
+  copy:
+    src: "{{ peervpn.build_path }}/peervpn/peervpn"
+    dest: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/usr/local/bin/peervpn"
+    owner: root
+    mode: '0755'

@@ -12,3 +12,6 @@
     repo: "{{ peervpn.git.repo_path }}"
     dest: "{{ peervpn.build_path }}/peervpn"
  
+- name: Make binary
+  import_tasks: make.yaml
+

@@ -1,0 +1,3 @@
+- name: Build peervpn binary
+  make:
+    chdir: "{{ peervpn.build_path }}/peervpn"

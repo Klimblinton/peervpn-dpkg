@@ -1,4 +1,12 @@
-- name: Ensure git cli is installed
+- name: Ensure git cli, wget, make and gcc is installed
   package:
-    name: git
+    name: 
+      - git
+      - make
+      - gcc
+      - libssl1.0-dev
+      - wget
+      - libcrypto++-dev
+      - zlib1g-dev 
+      - uml-utilities
     state: present
