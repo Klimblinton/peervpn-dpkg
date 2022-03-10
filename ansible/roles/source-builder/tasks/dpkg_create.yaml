@@ -3,7 +3,7 @@
     path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/DEBIAN"
     state: directory
     mode: '0755'
-    recursive: yes
+    recurse: yes
 
 - name: Template a deb package control file
   template:
@@ -17,7 +17,6 @@
     path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}/usr/local/bin"
     state: directory
     mode: '0755'
-    recursive: yes
 
 - name: Copy peervpn binary to package folder
   copy:
