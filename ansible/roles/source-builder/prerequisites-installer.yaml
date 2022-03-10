@@ -1,0 +1,4 @@
+- name: Ensure git cli is installed
+  ansible.buildin.package:
+    name: git
+    state: present

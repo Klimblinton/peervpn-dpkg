@@ -1,0 +1,14 @@
+- name: Install prerequisites
+  import_tasks: prerequisites-installer.yaml
+
+- name: Ensure build path exist
+  ansible.builtin.file:
+    path: {{ peervpn.build_path }}
+    state: directory
+    mode: '0755'
+
+- name: Clone peervpn source code
+  ansible.builtin.git:
+    repo: '{{ peervpn.git.repo_path }}'
+    dest: peervpn.build_path
+    version: main

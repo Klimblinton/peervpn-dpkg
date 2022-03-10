@@ -1,0 +1,5 @@
+peervpn:
+  git:
+    repo_path: "https://github.com/peervpn/peervpn"
+    dst_path: ""
+  build_path: "/opt/build"
