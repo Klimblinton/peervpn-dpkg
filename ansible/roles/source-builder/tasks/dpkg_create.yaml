@@ -27,5 +27,5 @@
 
 - name: Make peervpn debian package
   command: 
-    cmd: dpkg --build ~/example/hello-world_0.0.1-1_amd64 --build "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64"
+    cmd: dpkg --build "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64"
     creates: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64.deb"
