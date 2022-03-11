@@ -7,6 +7,6 @@ peervpn:
     version: "0.0.1"
     maintainer: "klimblinton"
     depends: "libssl1.0-dev, libcrypto++-dev, zlib1g-dev"
-    package_name: "{{ 'peervpn-' ~ peervpn.deb.version ~ '_amd64.deb'"
-    package_fullpath: "{{ peervpn.build_path ~ '/deb/' ~ peervpn.deb.package_name }}"
+    package_name: "peervpn-{{ version }}_amd64.deb"
+    package_fullpath: "{{ ../build_path }}/deb/{{ package_name }}"
   
