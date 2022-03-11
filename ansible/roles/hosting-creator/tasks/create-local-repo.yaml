@@ -23,7 +23,7 @@
   command: 
     cmd: dpkg-scanpackages --arch amd64 pool/
     chdir: "{{ repo_path }}"
-    register: dpkg_scanpackages_output
+  register: dpkg_scanpackages_output
 
 - name: Write peervpn debian scanpackages output to file
   copy: 
