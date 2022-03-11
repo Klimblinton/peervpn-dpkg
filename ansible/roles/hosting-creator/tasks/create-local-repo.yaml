@@ -19,7 +19,13 @@
     mode: '0755'
     recurse: true
 
-- name: Make peervpn debian package
+- name: Get peervpn debian scanpackages output
   command: 
-    cmd: dpkg-scanpackages --arch amd64 pool/ > dists/stable/main/binary-amd64/Packages
+    cmd: dpkg-scanpackages --arch amd64 pool/
     chdir: "{{ repo_path }}"
+    register: dpkg_scanpackages_output
+
+- name: Write peervpn debian scanpackages output to file
+  copy: 
+    content: "{{ dpkg_scanpackages_output }}"
+    dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
