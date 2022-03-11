@@ -1,20 +1,20 @@
 - name: Ensure apt-repo main pool path exist
   file:
-    path: "{{ repo.path }}/pool/main"
+    path: "{{ repo_path }}/pool/main"
     state: directory
     mode: '0755'
     recurse: true
 
 - name: Copy peervpn deb package to apt-repo main pool
   copy:
-    src: "{{ peervpn.build_path }}/deb/{{ peervpn.deb.package_name }}"
-    dest: "{{ repo.path }}/pool/main/"
+    src: "{{ peervpn_build_path }}/deb/{{ peervpn_deb_package_name }}"
+    dest: "{{ repo_path }}/pool/main/"
     owner: root
     mode: '0644'
 
 - name: Ensure apt-repo binary-amd64 path exist
   file:
-    path: "{{ repo.path }}/dists/stable/main/binary-amd64"
+    path: "{{ repo_path }}/dists/stable/main/binary-amd64"
     state: directory
     mode: '0755'
     recurse: true
@@ -22,4 +22,4 @@
 - name: Make peervpn debian package
   command: 
     cmd: dpkg-scanpackages --arch amd64 pool/ > dists/stable/main/binary-amd64/Packages
-    chdir: "{{ repo.path }}"
+    chdir: "{{ repo_path }}"
