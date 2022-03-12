@@ -3,7 +3,7 @@ server {
     server_name {{ repo_hostname }};
 
     location / {
-        root /opt/apt_repo;
+        root /opt;
         index index.html;
         autoindex on;
     }
