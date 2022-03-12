@@ -1,0 +1,16 @@
+- name: Template a list for repovpn
+  template:
+    src: peervpn.list.j2
+    dest: "/etc/apt/sources.list.d/peervpn.list"
+    owner: root
+    mode: '0644'
+  
+- name: Update apt-repos with insecure
+  command: 
+    cmd: apt-get update --allow-insecure-repositories
+
+- name: Ensure peervpn is installed
+  package:
+    name: 
+      - peervpn
+    state: present

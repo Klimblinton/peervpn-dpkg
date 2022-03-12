@@ -59,8 +59,3 @@
     content: "{{ ftparchive_release_output['stdout'] }}"
     dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Release"
 
-
-#- name: Create repo Release file
-#  command: 
-#    cmd: apt-ftparchive release dists/stable/main/binary-amd64/Release
-#    chdir: "{{ repo_path }}"

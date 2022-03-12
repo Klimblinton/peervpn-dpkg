@@ -1,0 +1,10 @@
+- name: Make hosts hack to route nginx hostname
+  lineinfile:
+    path: /etc/hosts
+    regexp: "{{ repo_ip_addr }}"
+    line: "{{ repo_ip_addr }} {{ repo_hostname }}"
+    state: present
+
+
+- name: Add repo and install peervpn package
+  import_tasks: add_repo_install_package.yaml
