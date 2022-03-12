@@ -3,3 +3,6 @@
 
 - name: Create local apt repo
   import_tasks: create-local-repo.yaml
+
+- name: Deploy nginx with repo
+  import_tasks: deploy-nginx.yaml
