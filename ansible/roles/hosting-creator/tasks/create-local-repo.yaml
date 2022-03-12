@@ -32,7 +32,7 @@
 
 - name: Get repo Packages file info
   command: 
-    cmd: apt-ftparchive packages pool/main dists/stable/main/binary-amd64/Packages
+    cmd: apt-ftparchive packages pool/main
     chdir: "{{ repo_path }}"
   register: "ftparchive_packages_output"
 
