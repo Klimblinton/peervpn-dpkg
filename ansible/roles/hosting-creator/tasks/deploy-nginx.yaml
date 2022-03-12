@@ -13,4 +13,11 @@
 
 - name: Restart nginx
   service: name=nginx state=restarted
-  
+
+- name: Make hosts hack to route nginx hostname
+  lineinfile:
+    path: /etc/hosts
+    search_string: "{{ repo_ip_addr }}"
+    line: "{{ repo_ip_addr }} {{ repo_hostname }}"
+    state: present
+

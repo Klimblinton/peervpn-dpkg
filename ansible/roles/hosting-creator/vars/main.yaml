@@ -1,4 +1,6 @@
 repo_path: "/opt/apt-repo"
+repo_ip_addr: "127.0.0.1"
+repo_hostname: "peervpn.repo"
 
 peervpn_build_path: "/opt/build"
 peervpn_deb_version: "0.0.1"
