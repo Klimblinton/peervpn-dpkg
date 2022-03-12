@@ -27,5 +27,5 @@
 
 - name: Write peervpn debian scanpackages output to file
   copy: 
-    content: "{{ dpkg_scanpackages_output }}"
+    content: "{{ dpkg_scanpackages_output['stdout'] }}"
     dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
