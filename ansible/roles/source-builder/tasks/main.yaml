@@ -3,14 +3,14 @@
 
 - name: Ensure build path exist
   file:
-    path: "{{ peervpn.build_path }}"
+    path: "{{ peervpn_build_path }}"
     state: directory
     mode: '0755'
 
 - name: Clone peervpn source code
   git:
-    repo: "{{ peervpn.git.repo_path }}"
-    dest: "{{ peervpn.build_path }}/peervpn"
+    repo: "{{ peervpn_git_repo_path }}"
+    dest: "{{ peervpn_build_path }}/peervpn"
  
 - name: Make binary
   import_tasks: make.yaml

@@ -1,6 +1,6 @@
 - name: Create dpkg directory
   file:
-    path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64/DEBIAN"
+    path: "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64/DEBIAN"
     state: directory
     mode: '0755'
     recurse: yes
@@ -8,24 +8,24 @@
 - name: Template a deb package control file
   template:
     src: peervpn_dpkg_control.j2
-    dest: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64/DEBIAN/control"
+    dest: "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64/DEBIAN/control"
     owner: root
     mode: '0644'
 
 - name: Create dpkg binary directory
   file:
-    path: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64/usr/local/bin"
+    path: "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64/usr/local/bin"
     state: directory
     mode: '0755'
 
 - name: Copy peervpn binary to package folder
   copy:
-    src: "{{ peervpn.build_path }}/peervpn/peervpn"
-    dest: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64/usr/local/bin/peervpn"
+    src: "{{ peervpn_build_path }}/peervpn/peervpn"
+    dest: "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64/usr/local/bin/peervpn"
     owner: root
     mode: '0755'
 
 - name: Make peervpn debian package
   command: 
-    cmd: dpkg --build "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64"
-    creates: "{{ peervpn.build_path }}/deb/peervpn-{{ peervpn.deb.version}}_amd64.deb"
+    cmd: dpkg --build "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64"
+    creates: "{{ peervpn_build_path }}/deb/peervpn-{{ peervpn_deb_version}}_amd64.deb"
