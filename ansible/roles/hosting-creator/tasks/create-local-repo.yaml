@@ -32,10 +32,10 @@
 
 - name: Create repo Packages file
   command: 
-    cmd: apt-ftparchive packages pool/dists/stable/main/binary-amd64/Packages
+    cmd: apt-ftparchive packages dists/stable/main/binary-amd64/Packages
     chdir: "{{ repo_path }}"
 
 - name: Create repo Release file
   command: 
     cmd: apt-ftparchive release dists/stable/main/binary-amd64/Release
-    chdir: "{{ repo_path }}/pool"
+    chdir: "{{ repo_path }}"
