@@ -36,7 +36,7 @@
     chdir: "{{ repo_path }}"
   register: "ftparchive_packages_output"
 
-- name: Write Get repo Packages file info
+- name: Write repo Packages file info
   copy: 
     content: "{{ ftparchive_packages_output['stdout'] }}"
     dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
