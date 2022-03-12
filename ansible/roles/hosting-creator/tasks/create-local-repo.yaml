@@ -30,3 +30,12 @@
 #    content: "{{ dpkg_scanpackages_output['stdout'] }}"
 #    dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
 
+- name: Create repo Packages file
+  command: 
+    cmd: apt-ftparchive packages pool/dists/stable/main/binary-amd64/Packages
+    chdir: "{{ repo_path }}"
+
+- name: Create repo Release file
+  command: 
+    cmd: apt-ftparchive release dists/stable/main/binary-amd64/Release
+    chdir: "{{ repo_path }}/pool"
