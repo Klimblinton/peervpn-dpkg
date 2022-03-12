@@ -1,6 +1,6 @@
 ---
 - hosts: all
   roles:
-    #- source-builder       
-    #- hosting-creator
+    - source-builder       
+    - hosting-creator
     - pkg-installer

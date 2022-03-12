@@ -57,5 +57,5 @@
 - name: Write Get repo Release file info
   copy: 
     content: "{{ ftparchive_release_output['stdout'] }}"
-    dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Release"
+    dest:  "{{ repo_path }}/dists/stable/Release"
 
