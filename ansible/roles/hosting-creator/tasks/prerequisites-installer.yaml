@@ -1,6 +1,5 @@
-- name: Ensure dpkg-dev and apt-ftparchive is installed
+- name: Ensure dpkg-dev is installed
   package:
     name: 
       - dpkg-dev
-      - apt-ftparchive
     state: present
