@@ -1,0 +1,15 @@
+repo_path: "/opt/apt-repo"
+repo_ip_addr: "127.0.0.1"
+repo_hostname: "peervpn.repo"
+
+peervpn_build_path: "/opt/build"
+
+peervpn_deb_version: "0.0.1"
+peervpn_deb_maintainer: "klimblinton"
+peervpn_deb_depends: "libssl1.0-dev, libcrypto++-dev, zlib1g-dev"
+peervpn_deb_package_name: "peervpn-{{ peervpn_deb_version }}_amd64.deb"
+peervpn_deb_package_fullpath: "{{ peervpn_build_path }}/deb/{{ peervpn_deb_package_name }}"
+  
+peervpn_git_repo_path: "https://github.com/peervpn/peervpn"
+peervpn_git_dst_path: ""
+      
