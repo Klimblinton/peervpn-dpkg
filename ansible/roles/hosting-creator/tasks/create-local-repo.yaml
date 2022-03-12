@@ -41,6 +41,18 @@
     content: "{{ ftparchive_packages_output['stdout'] }}"
     dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
 
+- name: Get repo Release file info
+  command: 
+    cmd: "apt-ftparchive release {{ repo_path }}/dists/stable/main/binary-amd64/Packages"
+    chdir: "{{ repo_path }}"
+  register: "ftparchive_release_output"
+
+- name: Write Get repo Release file info
+  copy: 
+    content: "{{ ftparchive_release_output['stdout'] }}"
+    dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Release"
+
+
 #- name: Create repo Release file
 #  command: 
 #    cmd: apt-ftparchive release dists/stable/main/binary-amd64/Release
