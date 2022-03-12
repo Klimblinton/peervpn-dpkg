@@ -41,9 +41,16 @@
     content: "{{ ftparchive_packages_output['stdout'] }}"
     dest:  "{{ repo_path }}/dists/stable/main/binary-amd64/Packages"
 
+- name: Template an apt-repo release config
+  template:
+    src: apt.conf.j2
+    dest: "{{ peervpn.build_path }}/apt.conf"
+    owner: root
+    mode: '0644'
+
 - name: Get repo Release file info
   command: 
-    cmd: "apt-ftparchive release {{ repo_path }}/dists/stable/main/binary-amd64/Packages"
+    cmd: "apt-ftparchive release -c={{ peervpn_build_path }}/apt.conf dists/stable"
     chdir: "{{ repo_path }}"
   register: "ftparchive_release_output"
 
