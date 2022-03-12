@@ -44,7 +44,7 @@
 - name: Template an apt-repo release config
   template:
     src: apt.conf.j2
-    dest: "{{ peervpn.build_path }}/apt.conf"
+    dest: "{{ peervpn_build_path }}/apt.conf"
     owner: root
     mode: '0644'
 
