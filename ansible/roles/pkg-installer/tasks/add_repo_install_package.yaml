@@ -10,7 +10,8 @@
     cmd: apt-get update --allow-insecure-repositories
 
 - name: Ensure peervpn is installed
-  package:
+  apt:
     name: 
       - peervpn
+    allow_unauthenticated: true
     state: present
