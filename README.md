@@ -55,6 +55,13 @@ Each role has its defaults/main.yaml vars to make it working, a sample role file
 - remove package source file /etc/apt/sources.list.d/peervpn.list and run apt-get update
 So its now safe to rerun and recheck roles
 
+## quickstart
+
+Usually I do it by: 
+```
+cd ansible && ansible-playbook -i inventories/main.yml test_build.yaml
+```
+
 ## TODO
 
 1. Make something like cleanup role to clean role dids to have ability to simplyfy rerun it once again
