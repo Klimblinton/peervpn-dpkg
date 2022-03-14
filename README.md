@@ -13,7 +13,7 @@ It consists of several main parts (roles and etc):
 
 1. Installs prerequisites
  - an Ubuntu 18.04 system needs to have git, make, gcc to fetch source from [Peervpn git repo](https://github.com/peervpn/peervpn) and build it
- - package build routine doesn;t support installed libssl 1.1 libs, it needs to have libssl 1.0 or some sort of libressl of supported version. So I just decideded to use a simplier way for tis time (install libssl1.0-dev, a fast downgrade way)
+ - package build routine doesn't support installed libssl 1.1 libs, it needs to have libssl 1.0 or some sort of libressl of supported version. So I just decideded to use a simplier way for tis time (install libssl1.0-dev, a fast downgrade way)
 2. Builds packages into {{ peervpn_build_path }} directory. At last it make a peervpn binary file ready to be copied and executed elsewhere.
 
 ## hosting-creator role
