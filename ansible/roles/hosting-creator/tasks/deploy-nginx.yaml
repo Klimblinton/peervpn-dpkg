@@ -1,7 +1,8 @@
 - name: Ensure nginx is installed
   package:
     name: 
-      - nginx
+        - nginx
+    
     state: present
 
 - name: Template nginx config
